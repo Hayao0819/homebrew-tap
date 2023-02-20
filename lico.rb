@@ -11,17 +11,17 @@ class Lico < Formula
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.1.0/lico_Darwin_x86_64.tar.gz"
-      sha256 "9f5098da06ce65622528d52fccfd1099c57fbea9f6d263147c7fb592f6ef3ae3"
+    if Hardware::CPU.arm?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.1.0/lico_Darwin_arm64.tar.gz"
+      sha256 "7e00fa08f6972c2a90a4cbdf694e6fb5ea8566f92294f5d7345810bdfe8d2d2b"
 
       def install
         bin.install "lico
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.1.0/lico_Darwin_arm64.tar.gz"
-      sha256 "3644423ebeac8b48b63aba2fe53734fc8a3e41d3c88e83811f7433422a0afa23"
+    if Hardware::CPU.intel?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.1.0/lico_Darwin_x86_64.tar.gz"
+      sha256 "dde551fed380361a2fac56838c12c1fef4b19e473115c93b048b8b026ed251a8"
 
       def install
         bin.install "lico
@@ -32,7 +32,7 @@ class Lico < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/Hayao0819/lico/releases/download/v0.1.0/lico_Linux_arm64.tar.gz"
-      sha256 "bd71437075228ecb3dcbc400c4c8077c078db92fb762203869bab5ef823e0e11"
+      sha256 "26e7bd57d69a9d6a4cb90abc8747a1180cdd697738adf6ffcac7dc84d4a4d4fb"
 
       def install
         bin.install "lico
@@ -40,7 +40,7 @@ class Lico < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/Hayao0819/lico/releases/download/v0.1.0/lico_Linux_x86_64.tar.gz"
-      sha256 "dbec9989dec4ea53af6412c67a0d397c48cf5cee0904aa0b4d5f510b6d533890"
+      sha256 "08583741b5b8986c746b1345e788185e83231c9ae1faea1a7dcd5a6efd1c25e2"
 
       def install
         bin.install "lico
