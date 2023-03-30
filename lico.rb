@@ -5,23 +5,23 @@
 class Lico < Formula
   desc "CLI tool for managing dotfiles"
   homepage "https://github.com/Hayao0819/lico"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.0/lico_Darwin_arm64.tar.gz"
-      sha256 "3e54dfdf0f3f8ad1b9aa790f82702f7e1076fb35edf2c1eb0586f9cfb7f8ec6f"
+      url "https://github.com/Hayao0819/lico/releases/download/v0.3.1/lico_Darwin_arm64.tar.gz"
+      sha256 "0aa8c0b200db481ead6d6145e864fa34d476e8692a53bc080bd0af0ebfa301e6"
 
       def install
         bin.install "lico
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.0/lico_Darwin_x86_64.tar.gz"
-      sha256 "87927c95a4ceaa180500f4e27177502f51308ab63b10ed0461de1ed948f3c817"
+      url "https://github.com/Hayao0819/lico/releases/download/v0.3.1/lico_Darwin_x86_64.tar.gz"
+      sha256 "d52d8a77246b9d738d5191602a7fddcad6cd074b6f8cb46b3e97d2e392f2b96a"
 
       def install
         bin.install "lico
@@ -30,17 +30,17 @@ class Lico < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.0/lico_Linux_arm64.tar.gz"
-      sha256 "d6ef8ccfb50dc1def97dd3199b503cf870fb09032e517a0b5f8300c613a8b492"
+    if Hardware::CPU.intel?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.3.1/lico_Linux_x86_64.tar.gz"
+      sha256 "b54205a537da147ce11dd01b90e1355910ae773d4ebb2c1d21d5190fe5ae3d45"
 
       def install
         bin.install "lico
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.0/lico_Linux_x86_64.tar.gz"
-      sha256 "edf9306dadffcb2ad1370512367af563ea8a8c542a993991c67f5b011c89c41a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.3.1/lico_Linux_arm64.tar.gz"
+      sha256 "504ad165cb6100740e060434a7dc9c0f7ebcb33ea7b14c70a88f29d70f7a3d3b"
 
       def install
         bin.install "lico
