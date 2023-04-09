@@ -5,45 +5,45 @@
 class Lico < Formula
   desc "CLI tool for managing dotfiles"
   homepage "https://github.com/Hayao0819/lico"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.1/lico_Darwin_arm64.tar.gz"
-      sha256 "0aa8c0b200db481ead6d6145e864fa34d476e8692a53bc080bd0af0ebfa301e6"
+    if Hardware::CPU.intel?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.3.2/lico_Darwin_x86_64.tar.gz"
+      sha256 "74cb446466d39f03c4ed13db9ed50e47a777ec94cc5a63d12ca4a8d3ed9a6658"
 
       def install
-        bin.install "lico
+        bin.install lico
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.1/lico_Darwin_x86_64.tar.gz"
-      sha256 "d52d8a77246b9d738d5191602a7fddcad6cd074b6f8cb46b3e97d2e392f2b96a"
+    if Hardware::CPU.arm?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.3.2/lico_Darwin_arm64.tar.gz"
+      sha256 "89cdd8e79276d9c829e7bad12ad28853719b86f492eeeceb3fc1c91cb86ac8f6"
 
       def install
-        bin.install "lico
+        bin.install lico
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.1/lico_Linux_x86_64.tar.gz"
-      sha256 "b54205a537da147ce11dd01b90e1355910ae773d4ebb2c1d21d5190fe5ae3d45"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.3.2/lico_Linux_arm64.tar.gz"
+      sha256 "248c44face4a4fd44b510e8612dcb705898956a179bd15b897943f54184226e9"
 
       def install
-        bin.install "lico
+        bin.install lico
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.1/lico_Linux_arm64.tar.gz"
-      sha256 "504ad165cb6100740e060434a7dc9c0f7ebcb33ea7b14c70a88f29d70f7a3d3b"
+    if Hardware::CPU.intel?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.3.2/lico_Linux_x86_64.tar.gz"
+      sha256 "9e6b0e713efa3de1140efef094d95a34a07a03cd928c85cbe6cc53726f094adc"
 
       def install
-        bin.install "lico
+        bin.install lico
       end
     end
   end
