@@ -16,7 +16,7 @@ class Lico < Formula
       sha256 "74cb446466d39f03c4ed13db9ed50e47a777ec94cc5a63d12ca4a8d3ed9a6658"
 
       def install
-        bin.install lico
+        bin.install "lico"
       end
     end
     if Hardware::CPU.arm?
@@ -24,7 +24,7 @@ class Lico < Formula
       sha256 "89cdd8e79276d9c829e7bad12ad28853719b86f492eeeceb3fc1c91cb86ac8f6"
 
       def install
-        bin.install lico
+        bin.install "lico"
       end
     end
   end
@@ -35,7 +35,7 @@ class Lico < Formula
       sha256 "248c44face4a4fd44b510e8612dcb705898956a179bd15b897943f54184226e9"
 
       def install
-        bin.install lico
+        bin.install "lico"
       end
     end
     if Hardware::CPU.intel?
@@ -43,7 +43,7 @@ class Lico < Formula
       sha256 "9e6b0e713efa3de1140efef094d95a34a07a03cd928c85cbe6cc53726f094adc"
 
       def install
-        bin.install lico
+        bin.install "lico"
       end
     end
   end
