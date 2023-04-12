@@ -5,23 +5,23 @@
 class Lico < Formula
   desc "CLI tool for managing dotfiles"
   homepage "https://github.com/Hayao0819/lico"
-  version "0.3.2"
+  version "0.4.0"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.2/lico_Darwin_x86_64.tar.gz"
-      sha256 "74cb446466d39f03c4ed13db9ed50e47a777ec94cc5a63d12ca4a8d3ed9a6658"
+      url "https://github.com/Hayao0819/lico/releases/download/v0.4.0/lico_Darwin_x86_64.tar.gz"
+      sha256 "0b63cf1a7e080770028862831f328ab1aa35437dadb251742e7d589963731498"
 
       def install
         bin.install "lico"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.2/lico_Darwin_arm64.tar.gz"
-      sha256 "89cdd8e79276d9c829e7bad12ad28853719b86f492eeeceb3fc1c91cb86ac8f6"
+      url "https://github.com/Hayao0819/lico/releases/download/v0.4.0/lico_Darwin_arm64.tar.gz"
+      sha256 "57c2950e2c670a762d8ff62e60eb65ac04021778795a167a82dd67f6dcde9763"
 
       def install
         bin.install "lico"
@@ -31,16 +31,16 @@ class Lico < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.2/lico_Linux_arm64.tar.gz"
-      sha256 "248c44face4a4fd44b510e8612dcb705898956a179bd15b897943f54184226e9"
+      url "https://github.com/Hayao0819/lico/releases/download/v0.4.0/lico_Linux_arm64.tar.gz"
+      sha256 "99efd35e65a7fc9007df428e658638ba8caeb7a767f756d718dca26c37f58d66"
 
       def install
         bin.install "lico"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.3.2/lico_Linux_x86_64.tar.gz"
-      sha256 "9e6b0e713efa3de1140efef094d95a34a07a03cd928c85cbe6cc53726f094adc"
+      url "https://github.com/Hayao0819/lico/releases/download/v0.4.0/lico_Linux_x86_64.tar.gz"
+      sha256 "283c10dd3c3053a9a472faaabe0195471dec3de57e74a0ee5ebec11ad912c455"
 
       def install
         bin.install "lico"
