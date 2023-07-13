@@ -5,56 +5,56 @@
 class Lico < Formula
   desc "CLI tool for managing dotfiles"
   homepage "https://github.com/Hayao0819/lico"
-  version "0.6.0-rc1"
+  version "0.6.0"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0-rc1/lico_Darwin_x86_64.tar.gz"
-      sha256 "cad5d835c72caf407647a75060476a35a7764637014d8106a66edd625899c5ec"
+    if Hardware::CPU.arm?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0/lico_Darwin_arm64.tar.gz"
+      sha256 "a1f9f1655424b904700ee5cb604e660082507ab93bab4bbdaf2ea5962daf05fb"
 
       def install
         bin.install "lico"
-        bash_completion.install "shell/lico.bash" => "your-cli"
-        zsh_completion.install "shell/lico.zsh" => "_your-cli"
+        bash_completion.install "shell/lico.bash" => "lico"
+        zsh_completion.install "shell/lico.zsh" => "lico"
         fish_completion.install "shell/lico.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0-rc1/lico_Darwin_arm64.tar.gz"
-      sha256 "b01ee2f2355b87b409b15cb011c9e1e9307c1e65678e579d4e4f02512343ee4e"
+    if Hardware::CPU.intel?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0/lico_Darwin_x86_64.tar.gz"
+      sha256 "24b20648256ff1af825de5a518e7361c2df327e156689ec7f74d1eaca1c9961f"
 
       def install
         bin.install "lico"
-        bash_completion.install "shell/lico.bash" => "your-cli"
-        zsh_completion.install "shell/lico.zsh" => "_your-cli"
+        bash_completion.install "shell/lico.bash" => "lico"
+        zsh_completion.install "shell/lico.zsh" => "lico"
         fish_completion.install "shell/lico.fish"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0-rc1/lico_Linux_arm64.tar.gz"
-      sha256 "1eedb90e3dc97841c4990067513ccf7d0b86f56c0db2adba7f8dcfcfd3bd77b2"
+    if Hardware::CPU.intel?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0/lico_Linux_x86_64.tar.gz"
+      sha256 "f1ae4ae3f66aa3b65a338c054dabc7d6967ede161b244249b5323b801ea6c1a9"
 
       def install
         bin.install "lico"
-        bash_completion.install "shell/lico.bash" => "your-cli"
-        zsh_completion.install "shell/lico.zsh" => "_your-cli"
+        bash_completion.install "shell/lico.bash" => "lico"
+        zsh_completion.install "shell/lico.zsh" => "lico"
         fish_completion.install "shell/lico.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0-rc1/lico_Linux_x86_64.tar.gz"
-      sha256 "a3bc5d5520d2bc190e89e80141bedf1085cd971a4e59692268e52c69e99c8926"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0/lico_Linux_arm64.tar.gz"
+      sha256 "c34aec6a0b481220df9826bb6d46b8d674ba04e5d8b2692d4c24de61015639b4"
 
       def install
         bin.install "lico"
-        bash_completion.install "shell/lico.bash" => "your-cli"
-        zsh_completion.install "shell/lico.zsh" => "_your-cli"
+        bash_completion.install "shell/lico.bash" => "lico"
+        zsh_completion.install "shell/lico.zsh" => "lico"
         fish_completion.install "shell/lico.fish"
       end
     end
