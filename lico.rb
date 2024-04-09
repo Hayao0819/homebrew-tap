@@ -5,15 +5,15 @@
 class Lico < Formula
   desc "CLI tool for managing dotfiles"
   homepage "https://github.com/Hayao0819/lico"
-  version "0.6.0"
+  version "0.6.1"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0/lico_Darwin_arm64.tar.gz"
-      sha256 "a1f9f1655424b904700ee5cb604e660082507ab93bab4bbdaf2ea5962daf05fb"
+    if Hardware::CPU.intel?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.6.1/lico_Darwin_x86_64.tar.gz"
+      sha256 "d19512ecda530e703c01e354b2dce87b9a5ef55ac266fb0a8bed4ed26b1664b5"
 
       def install
         bin.install "lico"
@@ -22,9 +22,9 @@ class Lico < Formula
         fish_completion.install "shell/lico.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0/lico_Darwin_x86_64.tar.gz"
-      sha256 "24b20648256ff1af825de5a518e7361c2df327e156689ec7f74d1eaca1c9961f"
+    if Hardware::CPU.arm?
+      url "https://github.com/Hayao0819/lico/releases/download/v0.6.1/lico_Darwin_arm64.tar.gz"
+      sha256 "79f81add2aef9e7c1e137b23ad5d85bc4fdb91d90f996176552057ef96630f42"
 
       def install
         bin.install "lico"
@@ -37,8 +37,8 @@ class Lico < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0/lico_Linux_x86_64.tar.gz"
-      sha256 "f1ae4ae3f66aa3b65a338c054dabc7d6967ede161b244249b5323b801ea6c1a9"
+      url "https://github.com/Hayao0819/lico/releases/download/v0.6.1/lico_Linux_x86_64.tar.gz"
+      sha256 "b681580148f7fb69d0a818f9707e870861d61487c1133d5ab082e4c64aeb3bfe"
 
       def install
         bin.install "lico"
@@ -48,8 +48,8 @@ class Lico < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Hayao0819/lico/releases/download/v0.6.0/lico_Linux_arm64.tar.gz"
-      sha256 "c34aec6a0b481220df9826bb6d46b8d674ba04e5d8b2692d4c24de61015639b4"
+      url "https://github.com/Hayao0819/lico/releases/download/v0.6.1/lico_Linux_arm64.tar.gz"
+      sha256 "e8aa3d9552f97cef5159177377cbf5f82bd3fcfc6a20cd41ae9ef7ad69f439c7"
 
       def install
         bin.install "lico"
